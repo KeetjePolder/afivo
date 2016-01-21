@@ -1,4 +1,4 @@
-SRC_ND	:= m_morton.f90 m_vtk.f90 m_write_silo.o
+SRC_ND	:= m_morton.f90 m_vtk.f90 m_write_silo.o m_mumps.f90
 SRC_XD	:= m_aX_t.f90 m_aX_core.f90 m_aX_io.f90 m_aX_gc.f90 \
 		m_aX_restrict.f90 m_aX_prolong.f90 m_aX_utils.f90 m_aX_mg.f90
 
@@ -49,3 +49,5 @@ m_a3_mg:			m_a3_t.o m_a3_utils.o
 
 m_write_silo.o:		INCDIRS += ../silo/include
 m_write_silo.o:		FFLAGS += -Wno-implicit-interface
+m_mumps.o:			INCDIRS += $$HOME/opt/src/MUMPS_5.0.1/include $$HOME/opt/src/MUMPS_5.0.1/libseq
+m_mumps.o:			FFLAGS += -Wno-implicit-interface

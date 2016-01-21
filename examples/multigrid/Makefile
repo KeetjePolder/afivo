@@ -17,3 +17,7 @@ clean:
 
 # Dependency information
 $(TESTS): $(A5_DIR)/src/libafivo.a
+test_mumps:		LIBDIRS += $$HOME/opt/src/MUMPS_5.0.1/lib\
+				$$HOME/opt/src/MUMPS_5.0.1/libseq\
+				$$HOME/opt/src/MUMPS_5.0.1/pord/lib
+test_mumps:		LIBS += dmumps mumps_common pord mpiseq blas pthread
